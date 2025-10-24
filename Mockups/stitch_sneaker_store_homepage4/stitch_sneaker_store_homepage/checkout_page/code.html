@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sneakerverse Checkout</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111a22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-dark dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-7xl flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233648] px-4 sm:px-10 py-3">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Sneakerverse</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#233648] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">favorite</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#233648] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">shopping_cart</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB7ssOH9k3NECY9glzWjF9mkVthcDjmDeKNmFJK6c_1tlGGC4nImhZGU5VeToAaCgeyMlw8dHhQiXBoLWgWWkGeaOjX9M-LReqloqslHAOq6TNZXTmQ_xvCwKs0mlld6z1XWVyS8zLmoMiywRqjfIbILYGnVqctZMosqoNr02UdVFRkYb4m1OAnolQjshsH7ibuyMNuTc1nWiNo2Ogfp-vdtE3LisRRIj-ScBgFBERbslfRd5CaeKE1VK53qYRsABfQpHOuDysz7ypS");'></div>
+</div>
+</header>
+<main class="flex-1 py-8 px-4 sm:px-10">
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="w-full lg:w-2/3">
+<div class="mb-8">
+<div class="flex flex-col gap-3 p-4">
+<div class="flex gap-6 justify-between">
+<p class="text-white text-base font-medium leading-normal">Step 1 of 4: Shipping</p>
+</div>
+<div class="rounded-lg bg-[#324d67]">
+<div class="h-2 rounded-lg bg-primary" style="width: 25%;"></div>
+</div>
+</div>
+</div>
+<div class="space-y-8">
+<section id="shipping-info">
+<h1 class="text-white tracking-light text-[32px] font-bold leading-tight px-4 text-left pb-3 pt-6">Shipping Information</h1>
+<form class="space-y-6">
+<div class="flex max-w-full flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-white text-base font-medium leading-normal pb-2">Full Name</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#324d67] bg-[#192633] focus:border-primary h-14 placeholder:text-[#92adc9] p-[15px] text-base font-normal leading-normal" placeholder="Enter your full name" value=""/>
+</label>
+</div>
+<div class="flex max-w-full flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-white text-base font-medium leading-normal pb-2">Address</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#324d67] bg-[#192633] focus:border-primary h-14 placeholder:text-[#92adc9] p-[15px] text-base font-normal leading-normal" placeholder="Enter your street address" value=""/>
+</label>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-white text-base font-medium leading-normal pb-2">City</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#324d67] bg-[#192633] focus:border-primary h-14 placeholder:text-[#92adc9] p-[15px] text-base font-normal leading-normal" placeholder="Enter your city" value=""/>
+</label>
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-white text-base font-medium leading-normal pb-2">Postal Code</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#324d67] bg-[#192633] focus:border-primary h-14 placeholder:text-[#92adc9] p-[15px] text-base font-normal leading-normal" placeholder="Enter postal code" value=""/>
+</label>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-white text-base font-medium leading-normal pb-2">Country</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#324d67] bg-[#192633] focus:border-primary h-14 p-[15px] text-base font-normal leading-normal">
+<option>United States</option>
+<option>Canada</option>
+<option>United Kingdom</option>
+</select>
+</label>
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-white text-base font-medium leading-normal pb-2">Phone Number</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#324d67] bg-[#192633] focus:border-primary h-14 placeholder:text-[#92adc9] p-[15px] text-base font-normal leading-normal" placeholder="Enter your phone number" value=""/>
+</label>
+</div>
+<div class="flex items-center gap-2 px-4 py-3">
+<input class="form-checkbox h-5 w-5 rounded bg-[#192633] border-[#324d67] text-primary focus:ring-primary focus:ring-offset-background-dark" id="billing-same" type="checkbox"/>
+<label class="text-white text-base font-medium" for="billing-same">Billing address is the same as shipping</label>
+</div>
+<div class="flex justify-between items-center px-4 py-6">
+<a class="text-primary font-medium" href="#"> &lt; Back to Cart </a>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-primary text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-[120px] px-6" type="button">
+                                                    Continue to Shipping
+                                                </button>
+</div>
+</form>
+</section>
+</div>
+</div>
+<aside class="w-full lg:w-1/3">
+<div class="bg-[#192633] rounded-xl p-6 space-y-6 sticky top-10">
+<h2 class="text-2xl font-bold text-white">Order Summary</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-20 h-20 bg-center bg-cover rounded-lg" data-alt="A stylish white and blue sneaker." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXo1tv9jMzn8tIKt6xKlTM0lGUbMEE512Gk3xNCslkPQDs1BhlHcDgQQr1ahd7WL4oidt0P39MWSPhz83ZWQ1lFV39Yux5tD3PQdDkofDOZNoikuLg3Nc2cKue1TuSvb1szrjtml2J6MqlL03BMzc9_dvYDBCqK2l6XxTvh2EABfrhQ4Xo4VvlIWgPYFA_k8y3ZkRU_WdmBGBxTup0UZEIj59emFMU5M3xPqsCogGtqjbj0htuiQghI0UvNI5_lWAr2WsjESylkZyQ');"></div>
+<div class="flex-1">
+<p class="font-medium text-white">Air Glide 350</p>
+<p class="text-sm text-[#92adc9]">Size: 10</p>
+</div>
+<p class="font-bold text-white">$180.00</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-20 h-20 bg-center bg-cover rounded-lg" data-alt="A pair of high-top red and white sneakers." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBm6lDVw_ih3l6Tju3zGUmaEo6AA96v5ekTY3YA_JmpOkZNnyk3y6nrOpXcRyTbJMBKh64A9pUglSyUhiRVlsYhvYQHsj4YkYqm7_8acIxqLHv4x7bV-0i5sgpElO0KTwCOFt5MZy1FgBONl3d_BeWHnC-wa9LnQdLQqueG6ZvRtYsQkHkBnHo_veEgNPX1ynjaQcQFdczFTwVIUm7ryF_DMbmPau1EwKjCJ60zSJ7dLH5Yx65Aem9iuUtIfQ7wzJocBzyt0Mcjuw51');"></div>
+<div class="flex-1">
+<p class="font-medium text-white">Retro High</p>
+<p class="text-sm text-[#92adc9]">Size: 9.5</p>
+</div>
+<p class="font-bold text-white">$220.00</p>
+</div>
+</div>
+<div class="border-t border-[#324d67] pt-4 space-y-2">
+<div class="flex justify-between text-[#92adc9]">
+<span>Subtotal</span>
+<span>$400.00</span>
+</div>
+<div class="flex justify-between text-[#92adc9]">
+<span>Shipping</span>
+<span>$15.00</span>
+</div>
+<div class="flex justify-between text-white font-bold text-lg border-t border-[#324d67] pt-4 mt-4">
+<span>Total</span>
+<span>$415.00</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>

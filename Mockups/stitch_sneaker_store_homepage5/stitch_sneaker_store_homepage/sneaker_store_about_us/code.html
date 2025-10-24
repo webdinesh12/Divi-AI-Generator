@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us - Sneaker Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#39FF14",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121212",
+                        "accent": "#FFA500",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-[#E0E0E0]">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#2A2A2A] px-4 md:px-10 py-3">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Sneaker Store</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-[#E0E0E0] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-[#E0E0E0] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Shop</a>
+<a class="text-primary text-sm font-medium leading-normal" href="#">About Us</a>
+<a class="text-[#E0E0E0] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="flex gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#2A2A2A] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-accent text-black text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-80 transition-opacity">
+<span class="truncate">Sign In</span>
+</button>
+</div>
+</div>
+<button class="md:hidden flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#2A2A2A] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex-grow">
+<div class="py-16">
+<div class="flex min-h-[480px] flex-col gap-8 rounded-lg items-center justify-center p-4 bg-cover bg-center" data-alt="close up of various colorful sneakers" style='background-image: linear-gradient(rgba(18, 18, 18, 0.7) 0%, rgba(18, 18, 18, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDg0scqo0yTDfWUPMhqdpmd1YkRKiFNcVf2Mk3r0x6Od1cqL-I4-2a4miwOCiFWN4XgWcba57tJekgjRKQuje5-cNEBuKf2LRN5_wG2FFcJ4TMd6io75R55c-LXobpMEDa72Fqto4a8mRpSbHEDM9BANaG5ylvNQ-KCQWquKILBXXh38A8lLRDPZoNnFN3pGuLkMRe6onu40q051CzW8h_l0T3ZjELjWmDLBmTjecj9HXRvje2EnGt8EwetPkZ3oWIn3dXo8y0NSNyU");'>
+<div class="flex flex-col gap-4 text-center">
+<h1 class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tighter">Our Sneaker Story</h1>
+<h2 class="text-[#E0E0E0] text-lg md:text-xl font-normal leading-normal">Discover the passion and dedication behind our collection.</h2>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-black text-base font-bold leading-normal tracking-[0.015em] hover:bg-opacity-80 transition-opacity">
+<span class="truncate">Shop Now</span>
+</button>
+</div>
+</div>
+<div class="py-16 text-center">
+<h1 class="text-white tracking-tight text-4xl font-bold leading-tight px-4 pb-4">Our Mission</h1>
+<p class="text-[#E0E0E0] text-lg font-normal leading-relaxed max-w-3xl mx-auto px-4">
+                                We are dedicated to providing the most exclusive and high-quality sneakers to enthusiasts and collectors. Our mission is to celebrate and preserve sneaker culture for generations to come, offering a curated selection that embodies authenticity, quality, and passion.
+                            </p>
+</div>
+<div class="py-16">
+<h2 class="text-white text-3xl font-bold leading-tight tracking-tight px-4 pb-12 text-center">Our Values</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
+<div class="bg-[#1A1A1A] p-8 rounded-lg text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-4">verified</span>
+<h3 class="text-white text-xl font-bold mb-2">Authenticity</h3>
+<p class="text-[#E0E0E0]">Every pair is 100% authentic, sourced from trusted partners.</p>
+</div>
+<div class="bg-[#1A1A1A] p-8 rounded-lg text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-4">groups</span>
+<h3 class="text-white text-xl font-bold mb-2">Community</h3>
+<p class="text-[#E0E0E0]">Building a vibrant community for sneaker lovers worldwide.</p>
+</div>
+<div class="bg-[#1A1A1A] p-8 rounded-lg text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-4">diamond</span>
+<h3 class="text-white text-xl font-bold mb-2">Quality</h3>
+<p class="text-[#E0E0E0]">Curating only the best in design, materials, and craftsmanship.</p>
+</div>
+<div class="bg-[#1A1A1A] p-8 rounded-lg text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-4">favorite</span>
+<h3 class="text-white text-xl font-bold mb-2">Passion</h3>
+<p class="text-[#E0E0E0]">Driven by a shared love for the art and culture of sneakers.</p>
+</div>
+</div>
+</div>
+<div class="py-16">
+<h2 class="text-white text-3xl font-bold leading-tight tracking-tight px-4 pb-12 text-center">Our Story</h2>
+<div class="relative px-4">
+<div class="absolute left-1/2 h-full w-0.5 bg-[#2A2A2A] -translate-x-1/2"></div>
+<div class="grid grid-cols-1 gap-16">
+<div class="flex items-center gap-8">
+<div class="w-1/2 text-right">
+<h3 class="text-accent text-2xl font-bold">2018</h3>
+<h4 class="text-white text-xl font-semibold mt-1">Founded</h4>
+<p class="text-[#E0E0E0] mt-2">Born from a passion for sneakers, our journey began in a small garage.</p>
+</div>
+<div class="relative w-1/2">
+<div class="absolute -left-2.5 top-1/2 -translate-y-1/2 h-5 w-5 rounded-full bg-primary border-4 border-[#121212]"></div>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="relative w-1/2">
+<div class="absolute -right-2.5 top-1/2 -translate-y-1/2 h-5 w-5 rounded-full bg-primary border-4 border-[#121212]"></div>
+</div>
+<div class="w-1/2 text-left">
+<h3 class="text-accent text-2xl font-bold">2020</h3>
+<h4 class="text-white text-xl font-semibold mt-1">First Exclusive Drop</h4>
+<p class="text-[#E0E0E0] mt-2">We launched our first limited-edition collaboration, selling out in minutes.</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="w-1/2 text-right">
+<h3 class="text-accent text-2xl font-bold">2022</h3>
+<h4 class="text-white text-xl font-semibold mt-1">Opened Flagship Store</h4>
+<p class="text-[#E0E0E0] mt-2">Our first physical store opened, creating a hub for our community.</p>
+</div>
+<div class="relative w-1/2">
+<div class="absolute -left-2.5 top-1/2 -translate-y-1/2 h-5 w-5 rounded-full bg-primary border-4 border-[#121212]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="py-16">
+<h2 class="text-white text-3xl font-bold leading-tight tracking-tight px-4 pb-12 text-center">Meet the Team</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+<div class="bg-[#1A1A1A] p-6 rounded-lg text-center">
+<img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" data-alt="Portrait of a smiling man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8ePvs5wOsL47vmkmmtS2LM345wMtd3sR6OkxzwAb92QePFuzEVyDT1BEGQOnNrwlnwt5pPWygmeI8Fu7TY9aVEnMso40KIIc0KMSEM4QQovKh2xuDNOS7qU9nsBJlbwAOGBB-BrDh2Nvpp6Op7zMhbWrEF8QdYljqfeiMnK5uBlTy0ujFb4A6HaLl-bdEAYnQ60UKWNAV8vgcwj0VDXJtdxzXbhhrf7HKPZ165CPoPhYyR3p0GLlZDiFJfUTe1zN3LOvguUDnX1tb"/>
+<h3 class="text-white text-xl font-bold">Alex Johnson</h3>
+<p class="text-accent text-sm font-semibold">Founder &amp; CEO</p>
+<p class="text-[#E0E0E0] mt-2 text-sm">The visionary behind the brand, Alex's passion for sneakers started it all.</p>
+</div>
+<div class="bg-[#1A1A1A] p-6 rounded-lg text-center">
+<img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" data-alt="Portrait of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSN5Cn2p9HKwsrxUYqxPFcD2kSofwJqkzurIXxvYHEyFL4uAcBiqFJ5jf99LW3kwTvtam2DX5DSr6Wb5KQ_qg8YXv5mnBqJFsKB5DvFi7Aki5kF7RTldmU2JNEsBOT6rKkzsaTTcSoM-CaMXs-3Onq4f90qhnEJ7rZKc45TVeqNCKaVk7-rUz4taNtbbaqF0IiZrxPPrIy0X76O2GiqTdssLtLMevk2XO6OTWABePGQoC7O19zIHC-ypW8tEor9yvEM0IXnBesKwUw"/>
+<h3 class="text-white text-xl font-bold">Maria Garcia</h3>
+<p class="text-accent text-sm font-semibold">Head of Curation</p>
+<p class="text-[#E0E0E0] mt-2 text-sm">Maria has an unmatched eye for style and quality, curating our collection.</p>
+</div>
+<div class="bg-[#1A1A1A] p-6 rounded-lg text-center">
+<img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" data-alt="Portrait of a man with a beard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP-J19jL-QC-InzcQq3qmGym98EgBLH8J5ieUuOS2rXQVNyMDybBuaEkbOi_Y3Kvu8D6-lQQDkynMH4NlTfbYUc9hskad-yM4qoaJ9ImnenSMYvpFR0FZS3DQsTzuhdmxGj0tdVn9AdQjtwl5xiIkUw6rxelpgYANi8yW0YN-5Mgc-SuqbYGTu5l6FiF4bFJCO8hIwOWgp9whvfya0mBvPEshCTEfA3r9xLORe7OMJlU2mOcl9_ns8CctteqxVW2OhX9Pqp-46RG7D"/>
+<h3 class="text-white text-xl font-bold">David Chen</h3>
+<p class="text-accent text-sm font-semibold">Community Manager</p>
+<p class="text-[#E0E0E0] mt-2 text-sm">David connects with our community, organizing events and collaborations.</p>
+</div>
+</div>
+</div>
+<div class="py-16 bg-[#1A1A1A] rounded-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 px-8">
+<div>
+<h2 class="text-white text-3xl font-bold leading-tight tracking-tight pb-4">Get in Touch</h2>
+<p class="text-[#E0E0E0] mb-6">Have a question or just want to talk sneakers? We're here to help.</p>
+<div class="space-y-4">
+<p class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">location_on</span>123 Kicks Ave, Sneakerville, 90210</p>
+<p class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">email</span><a class="hover:text-primary transition-colors" href="mailto:hello@sneakerstore.com">hello@sneakerstore.com</a></p>
+<p class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">phone</span><a class="hover:text-primary transition-colors" href="tel:+1234567890">+1 (234) 567-890</a></p>
+</div>
+<div class="flex gap-4 mt-6">
+<a class="text-white hover:text-primary transition-colors" href="#"><svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802C9.042 3.965 8.71 3.977 7.433 4.03c-2.43.11-3.692 1.34-3.803 3.802-.054 1.276-.066 1.603-.066 4.167s.012 2.89.066 4.166c.11 2.463 1.373 3.692 3.803 3.803 1.277.054 1.604.065 4.167.065s2.891-.011 4.167-.065c2.432-.11 3.692-1.34 3.803-3.803.054-1.276.065-1.604.065-4.166 0-2.564-.012-2.891-.065-4.167-.11-2.46-1.373-3.692-3.803-3.802C15.29 3.977 14.96 3.965 12 3.965zM12 8c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm0 6c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm6-8.5c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5z"></path></svg></a>
+<a class="text-white hover:text-primary transition-colors" href="#"><svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M22.46 6c-.77.34-1.6.57-2.46.67.89-.53 1.56-1.37 1.88-2.38-.83.49-1.75.85-2.72 1.04C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.22-1.95-.55v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.94.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.21 0-.42-.01-.63.84-.6 1.56-1.36 2.14-2.23z"></path></svg></a>
+<a class="text-white hover:text-primary transition-colors" href="#"><svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.732 0 1.325-.593 1.325-1.325V1.325C24 .593 23.407 0 22.675 0z"></path></svg></a>
+</div>
+</div>
+<div>
+<form action="#" class="space-y-4">
+<div>
+<label class="sr-only" for="name">Name</label>
+<input class="w-full bg-[#2A2A2A] border-transparent rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary" id="name" placeholder="Your Name" type="text"/>
+</div>
+<div>
+<label class="sr-only" for="email">Email</label>
+<input class="w-full bg-[#2A2A2A] border-transparent rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary" id="email" placeholder="Your Email" type="email"/>
+</div>
+<div>
+<label class="sr-only" for="message">Message</label>
+<textarea class="w-full bg-[#2A2A2A] border-transparent rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary" id="message" placeholder="Your Message" rows="4"></textarea>
+</div>
+<button class="w-full flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-accent text-black text-base font-bold leading-normal tracking-[0.015em] hover:bg-opacity-80 transition-opacity" type="submit">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>

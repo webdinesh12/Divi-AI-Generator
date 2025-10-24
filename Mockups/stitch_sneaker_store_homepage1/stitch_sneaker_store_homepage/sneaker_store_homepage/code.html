@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sneakers - Modern E-commerce</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00FFFF",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121212",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233648] px-4 sm:px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Sneakers</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-[#E0E0E0] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Men</a>
+<a class="text-[#E0E0E0] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Women</a>
+<a class="text-[#E0E0E0] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">New Arrivals</a>
+<a class="text-[#E0E0E0] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Sale</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4">
+<label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#92adc9] flex border-none bg-[#233648] items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#E0E0E0] focus:outline-0 focus:ring-0 border-none bg-[#233648] focus:border-none h-full placeholder:text-[#92adc9] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[#233648] text-white hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-xl">person</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[#233648] text-white hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite_border</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[#233648] text-white hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-xl">shopping_bag</span>
+</button>
+<button class="md:hidden flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[#233648] text-white hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-xl">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-col gap-10 lg:gap-16 mt-5">
+<div class="@container">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[480px] lg:min-h-[600px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10" data-alt="A futuristic sneaker with glowing blue accents on a dark background." style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(18, 18, 18, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3Bb9mdeDOI6KVyjpLFHi71sLIO2e0VymmbOKiisYPVJ4jIODFxqIdJTGkKhOjVqsRUfARFgt_XwsX5bbZdxGjYPNAS20jKKRet94cyJtYVtSNF6JETLcIW-JH65CVJlPmRFzs4NeD2zLe6BbgKJsrnhzICQdFnOdrYRUzxB0QOxA7s2RdtuQWXCVPm7D7H_Z3Qz3Pgl3oswTcOGkgANC-KjheoMwhY8cUFTF0-bvOAc27i420FQiT2jLkmGeUmQb2HrvmrfhYqp_I");'>
+<div class="flex flex-col gap-2 text-left max-w-2xl">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                            Introducing the Future of Flight
+                                        </h1>
+<h2 class="text-[#E0E0E0] text-base font-normal leading-normal @[480px]:text-lg @[480px]:font-normal @[480px]:leading-normal">
+                                            Experience the next generation of comfort and performance. Built for athletes who demand the best.
+                                        </h2>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-background-dark text-base font-bold leading-normal tracking-[0.015em] hover:bg-opacity-80 transition-all">
+<span class="truncate">Shop Now</span>
+</button>
+</div>
+</div>
+</div>
+<section>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Featured Products</h2>
+<div class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-6 p-4">
+<div class="flex flex-col gap-3 pb-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="A pair of Nike Air Jordan 1 sneakers in a classic colorway." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-SFQ46xJeFCwKKnAl4A__Y_jy6AoclF4DlWobLkMb334rdV0sAJZkdbN7HRpvPA1dZpqtD19pjuR4TOMzLI6P2u0oG-3FS77yokSTM9ZBYWna3TBJmAWL3RvHwAawpAcu-efWudaJVB2NKaoAqR4saYEW7kX7f0cnaWifc7tMYGBUl9gyEtpfuKbWriLzq557i1CJF4oH2yeqKMbwhCOG26tCRD-6QH2LFGeax-6cT2AodrbsTmSoSxqAFkS-pfJFrhYYYlFSkKo6"/>
+<button class="absolute bottom-4 right-4 bg-primary text-background-dark rounded-full p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div>
+<p class="text-white text-base font-medium leading-normal">Air Jordan 1</p>
+<p class="text-[#92adc9] text-sm font-normal leading-normal">Nike</p>
+<p class="text-white text-base font-medium leading-normal mt-1">$170</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 pb-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="A pair of Adidas Yeezy Boost 350 sneakers in a beige color." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7DyPtYLDzjOfzwWpi15Tcdb5cM3vabNo9QDEb1vTpD2TVChhl7Hm3ii1rb4cFFw7RtWNwTPtS1KbDSQow2EZFD4wJKZMRSgCzm4R_6xBokEuwJj1sd3EG6TVHedcKTIhlmJpTQghBPK6Kkp6rgyWg2JBz7MdY3pYDx0lkhjQRoXmch1-YGjA6f_TGuVNgO0JVYmEfC8dugQTi_GPycZgOrEBxiuH1kmhXcVeQ1svm96nLsYFxhR6uKkwpS47S1OeQdCl5_EofDYXJ"/>
+<button class="absolute bottom-4 right-4 bg-primary text-background-dark rounded-full p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div>
+<p class="text-white text-base font-medium leading-normal">Yeezy Boost 350</p>
+<p class="text-[#92adc9] text-sm font-normal leading-normal">Adidas</p>
+<p class="text-white text-base font-medium leading-normal mt-1">$220</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 pb-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="A pair of Nike Air Force 1 sneakers in all white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbAgdBKwZWsREcGcw8FSzUonvH5R8yQyJz_QQSo73-9_wigPuXgyLyIP5a9Iu8hb2SbHU3bFmcPnkc-HpyyavlT1Mz7bXG7i_CQDOlpV05SleSZTQaBCREC6AMwgei5k58iCZdxwP5bFoYTOEbCPFmT9gk1bm_nBdn9kx7jyz3S6dDwxddaYOnd6TB6mB7RMpzUx5eTPaD03puTTJaaDWgB0RhtT_fqiaER9lw1fwjsXE1eyuYru-TrnPOjoHAOFpF8uWv1bQQNxG8"/>
+<button class="absolute bottom-4 right-4 bg-primary text-background-dark rounded-full p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div>
+<p class="text-white text-base font-medium leading-normal">Nike Air Force 1</p>
+<p class="text-[#92adc9] text-sm font-normal leading-normal">Nike</p>
+<p class="text-white text-base font-medium leading-normal mt-1">$100</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 pb-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="A pair of Converse Chuck 70 high-top sneakers in black." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3qT_2gVnITJXVAHvEqmJqu7wNAFi19fFqNNJvY0B7Z3hHjKL-b51LQi0NPUPBPMfpIk18l0A0ypCAS6myRZKJ_Mx-xLfuf-fNs9CvkWHJtdPdY7LCMR6ccc8bNOlaW4EzRsAAbkj-V5plwpsJ1a-AISyikuXrbYpxHFbCeVFjGtorh3d3sI7ufnh3LN2jDe3bVsaXTL31x0hVe19KzZHow2bY-DJMw2QLZxUGYKiiiynvNL9W4qwEWJdQHiNjkKe_lYy6MESaBjJF"/>
+<button class="absolute bottom-4 right-4 bg-primary text-background-dark rounded-full p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div>
+<p class="text-white text-base font-medium leading-normal">Converse Chuck 70</p>
+<p class="text-[#92adc9] text-sm font-normal leading-normal">Converse</p>
+<p class="text-white text-base font-medium leading-normal mt-1">$85</p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">New Arrivals</h2>
+<div class="relative">
+<div class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 px-4 py-4">
+<div class="snap-center shrink-0 w-3/4 sm:w-2/5 lg:w-1/3">
+<img class="w-full h-auto object-cover rounded-lg" data-alt="A pair of colorful running sneakers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu2QP6irb0b8tZ4mOy3f6dpGGCQnUaixpcCltrYKGZhc1zRNDSm5PGiyKq069vvMlpYDVz-HkF1KXtEC7SYO9Xi5Iw83NNxdPOXPrJ1YUy0ILWcaJHfRbXwTVrA9XvtKAuvCO36HYbNXSVKxmZ2Jbb1vLhj-e3Drm1o9VF76gaUXCfL_DBhR6wRV9-eJbu855XJXA06MoK7YBkiw0ys8VmtmrdaT1TrxvF044-ClER4J9Kwn5uvJyZ0fi_g02F5xcyJBGBwT1koWlg"/>
+</div>
+<div class="snap-center shrink-0 w-3/4 sm:w-2/5 lg:w-1/3">
+<img class="w-full h-auto object-cover rounded-lg" data-alt="A classic pair of Nike sneakers on a wooden surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyLrWdC_RX0poPyxSVKZHcdD5_PGItif8C18Poq3um_FHmU3O9xyPvSgnPmny-iTIOS-461M-qbVFc6t83UEg9Vye0yL8bLvV-6V2zNZcBoGx9UvKtrf_b5SqRqgDoqyHFvNTK983iqvLZDM7JyUCl8m7MXntsophPH7UszQ1_vEyw3MJNSoMS6_HknnNSe8xoWvOnfVS5cOhMeyJzp5UcrDxs8RBfg89gM33w-UFvghAEsQtnvKtfDz0rHMbITZDLg3mzqKGV9kFc"/>
+</div>
+<div class="snap-center shrink-0 w-3/4 sm:w-2/5 lg:w-1/3">
+<img class="w-full h-auto object-cover rounded-lg" data-alt="A pair of high-top sneakers with red and white details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtKSWxciu6FNyp4X_hVJqcnZnptQj3FwDm_RpF1G2yFqFLn86ABm8pEm0MwbPQHSk-TYAiCYzCneUl_nC3zwkazgUN5RQPLJh6XawweglD9U9fEdQzv4uXijSS61K85ozVU_oYoz9ZjZD1D75WfhCkSzVt20SPg2dmFhsEEUTCEKzyDfdvKXyDQk9ergl6JsWs2nbrPGuBaXkvS0WIRZfSA-aTr2bO2BPvxjswqYnOc_c1LkMN_-11nLExTD3hdLuXoh8fm_vvWZjx"/>
+</div>
+<div class="snap-center shrink-0 w-3/4 sm:w-2/5 lg:w-1/3">
+<img class="w-full h-auto object-cover rounded-lg" data-alt="White Adidas sneakers with black stripes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcpTkOZnxvF5Q00topmZZa4voIbKq6_yWC0pt-FU6hOlRveZlz8BzprDAh_oa-b0ysHja8NJpMRhLQakg9UgTLOVTrq4pXjVOKcfBzqLgwdQOkeg2qWDb-NpkQRZ4OyWFCqJBkvE8_JWi6uMvTUdIlPH5YjKu5T_oupn58mUhWE4yWdiXmtHqhOcVIoFHT4DUAkMwbhqbk_BDakpYVcu8EC0Jloa9sZQGFWgMyJy3ya9_3oB55CRDN5wFZGeO0Ko2HI6irpszdMQa7"/>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+<div class="bg-[#233648] rounded-lg p-8 flex flex-col justify-center items-start text-left" data-alt="Abstract background with orange and blue gradient.">
+<h3 class="text-2xl font-bold text-white">Mid-Season Sale</h3>
+<p class="text-[#E0E0E0] mt-2">Up to <span class="text-primary font-bold text-3xl">40%</span> Off</p>
+<button class="mt-6 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-80 transition-all">
+<span class="truncate">Shop Sale</span>
+</button>
+</div>
+<div class="bg-cover bg-center rounded-lg p-8 flex flex-col justify-end items-start text-left min-h-[250px]" data-alt="A person tying the laces of their sneakers." style="background-image: linear-gradient(rgba(18, 18, 18, 0.1), rgba(18, 18, 18, 0.7)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDY5JczW19JGNQU9I4w8tVOd4ZkpgLYXIdof2UzXEbKOsErrVCwtmVCC9G86zkSGIppYp4tAJoJX8nk7LUnEhg21TwBHflnnhR3NNtxBzd8Rl1fG4Y7VCKqNPy6xJlkL3j6gRsYNC5wWVDNMJ-gWtHCdQr9LC1RyS1E3o_Pl46tX2g-fL08n22DliMQjjDcrpnC1WcNvH5TOqqkbDSN_cW4ksBLSm22-E3_rReRzZwTOFxlfw1el2CbnW8S7ToZXKf464N1XCufAv-X');">
+<div>
+<h3 class="text-2xl font-bold text-white">Free Shipping</h3>
+<p class="text-[#E0E0E0] mt-1">On all orders over $75</p>
+</div>
+</div>
+</section>
+<section class="py-10">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-5 text-center">Shop By Brand</h2>
+<div class="flex justify-center items-center gap-8 md:gap-12 flex-wrap px-4">
+<img class="h-8 md:h-10 text-gray-400 grayscale hover:grayscale-0 transition-all" data-alt="Nike logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8yPx-YSPW9NVkHuj9r4n86nen7o9WwsanyQGhMo29cgqNDl6Y-TM6RdX0dmWlZTKDyLwUacWeuFNFwskbOxMKfa2XeOs1GYFlYrlkExIBZ42nlnYWJYyTjZeeR2TguWTtT-pSV74EtYuFlO0TUbSthgPLzbbKBMtXGY5FI7Q4ajVlIEOJ5KonRcs-jKWfgi4ds154mjAqRhID4nwgAlDcBZbUHIN-tPtwlnXAqQgH2cnjASLtJERbI18juI_I3E_uiBNtKilcs-r7" style="filter: invert(1);"/>
+<img class="h-8 md:h-10 text-gray-400 grayscale hover:grayscale-0 transition-all" data-alt="Adidas logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBisByMqL-31R4deI4rrUAeG53sD3ypKaXlkHmAXkObPBV2eHzABl8-cDxLhvlSOJaqfru01zPcY1qR14rUBETwJztahzyk2UvR6d8DoA8aEItTlP7iXeQxaNKFJfiyzhGxBVHTkrdBbQYZs_Zz3x0_MThMTLeSl4l0_b3g1HzQwjzBdc24thXMoGyVciCXJsH-Sltoq9PsorT8HA2UBhxUcz4JnR_Pc3T8QqcYsvSCXhDWfKBRl8qenkkvtIMroYwCxezDl20P36Ma" style="filter: invert(1);"/>
+<img class="h-8 md:h-10 text-gray-400 grayscale hover:grayscale-0 transition-all" data-alt="Jordan brand logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCErOUfhUPsd7xtBxtkEKxNCt8IdVtCQz4N22WCkdYEC8SS0x-OyiSU3gqz_BD0pk8dYk8MzElEWJyZUnCGlJW8ttgmqzzkXKUAgPuHyYmpmv8NH_jX9jc3VQP6H7NJholhRXHEObSe7ch38uXK8vj-n74fgFs7JKEowRVac8Ig-qj7gaYyn45lPSCCYcCB0EaG-orP1snHFRfPjrxUugUU8n7oFifeCU_nthWdx5WMCyTMaaOHE3DzjBBKOgq_SQzWEIIgty6N62L6" style="filter: invert(1);"/>
+<img class="h-8 md:h-10 text-gray-400 grayscale hover:grayscale-0 transition-all" data-alt="Converse logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKyf50omFuzpal6OYr47jmb8OQ3TunoQRttloXpNrFnw7KYY7bKK3AU3l9hRzrsCY2XETNuC8Ag9ldooIRYHYebfshFj1AteDJm7ZjCjRuCTyM-olcknIqlbd3AFari4ZqJEzUCZCE7gJDmLqr6KUbWNmPALjpxFpsWgXrNM7xIk25ObJNNI85f1F6aou2VkMd7fIEUFaMNQomcrtPtJlEroRqMiam0UVf7RuolC3ma2MawZ_ze-8225a_b9o6PvQOj4GRo35zZ_Aa" style="filter: invert(1);"/>
+<img class="h-8 md:h-10 text-gray-400 grayscale hover:grayscale-0 transition-all" data-alt="Puma logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhI20Bi8g8RKEl5ISz-Jp8yg_AQO2i9VnIfPnkAGl9QaKTIEMQGjg776JphTooPa1jBzxuZnN-5wL5Fa2PteGXhwgx-vSOFslyW8dLju4G8H0DfLu-mGKvBRHalZ_kBo8RcZrDn96qMY0rlTZ9ByGoehkq5pCjVzuoN82RzWKoe5gR2fWfa4yNNdgd0EOu5yC7wBqV0ykSPiXQ3Q0Wj1Ly2duyHHaZcuO-9QnykedEFZIJCQDx5qzDA92DvDmUknNe4J3KgtqI7pkx" style="filter: invert(1);"/>
+</div>
+</section>
+</main>
+<footer class="mt-16 border-t border-solid border-b-[#233648] pt-10 pb-8 px-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<h3 class="text-white font-bold mb-4">Customer Service</h3>
+<ul class="space-y-2">
+<li><a class="text-[#E0E0E0] hover:text-primary transition-colors text-sm" href="#">Contact Us</a></li>
+<li><a class="text-[#E0E0E0] hover:text-primary transition-colors text-sm" href="#">FAQ</a></li>
+<li><a class="text-[#E0E0E0] hover:text-primary transition-colors text-sm" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-[#E0E0E0] hover:text-primary transition-colors text-sm" href="#">Order Status</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white font-bold mb-4">Company</h3>
+<ul class="space-y-2">
+<li><a class="text-[#E0E0E0] hover:text-primary transition-colors text-sm" href="#">About Us</a></li>
+<li><a class="text-[#E0E0E0] hover:text-primary transition-colors text-sm" href="#">Careers</a></li>
+<li><a class="text-[#E0E0E0] hover:text-primary transition-colors text-sm" href="#">Press</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white font-bold mb-4">Follow Us</h3>
+<div class="flex space-x-4">
+<a class="text-[#E0E0E0] hover:text-primary transition-colors" href="#">
+<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-[#E0E0E0] hover:text-primary transition-colors" href="#">
+<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="text-[#E0E0E0] hover:text-primary transition-colors" href="#">
+<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.791 2.013 10.145 2 12.315 2zm-1.002 3.705c-1.393.045-2.228.32-2.88.577-.633.25-1.11.56-1.552.998-.44.44-.748.92-.998 1.552-.257.652-.532 1.487-.577 2.88-.045 1.36-.056 1.688-.056 3.291s.011 1.93.056 3.291c.045 1.393.32 2.228.577 2.88.25.633.56 1.11.998 1.552.44.44.92.748 1.552.998.652.257 1.487.532 2.88.577 1.36.045 1.688.056 3.291.056s1.93-.011 3.291-.056c1.393-.045 2.228-.32 2.88-.577.633-.25 1.11-.56 1.552-.998.44-.44.748-.92.998-1.552.257-.652.532-1.487.577-2.88.045-1.36.056-1.688.056-3.291s-.011-1.93-.056-3.291c-.045-1.393-.32-2.228-.577-2.88-.25-.633-.56-1.11-.998-1.552-.44-.44-.92-.748-1.552-.998-.652-.257-1.487-.532-2.88-.577-1.36-.045-1.688-.056-3.291-.056s-1.93.011-3.291.056zM12 9.75a4.25 4.25 0 100 8.5 4.25 4.25 0 000-8.5zm0 1.5a2.75 2.75 0 110 5.5 2.75 2.75 0 010-5.5zm5.338-3.205a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-white font-bold mb-4">Stay in the Loop</h3>
+<p class="text-[#E0E0E0] text-sm mb-4">Sign up for our newsletter to get the latest deals and updates.</p>
+<form class="flex">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-none rounded-lg text-[#E0E0E0] focus:outline-0 focus:ring-0 border-none bg-[#233648] focus:border-none h-10 placeholder:text-[#92adc9] px-4 text-sm font-normal leading-normal" placeholder="Enter your email" type="email"/>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-l-none rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-80 transition-colors" type="submit">Sign Up</button>
+</form>
+</div>
+</div>
+<div class="mt-10 pt-8 border-t border-solid border-b-[#233648] text-center text-[#92adc9] text-sm">
+<p>© 2024 Sneakers. All Rights Reserved. Built with WordPress and WooCommerce.</p>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sneakers - Product Listing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+<header class="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-sm">
+<div class="container mx-auto px-4">
+<div class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233648] px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-white">
+<span class="material-symbols-outlined text-3xl text-primary">sprint</span>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Sneakers</h2>
+</div>
+<div class="hidden md:flex items-center gap-9">
+<a class="text-white text-sm font-medium leading-normal" href="#">Men</a>
+<a class="text-white text-sm font-medium leading-normal" href="#">Women</a>
+<a class="text-white text-sm font-medium leading-normal" href="#">New Arrivals</a>
+<a class="text-white text-sm font-medium leading-normal" href="#">Sale</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-4">
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#92adc9] flex border-none bg-[#233648] items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#233648] focus:border-none h-full placeholder:text-[#92adc9] px-4 pl-2 text-base font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[#233648] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[#233648] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="container mx-auto px-4 py-8">
+<div class="flex flex-col md:flex-row gap-8">
+<aside class="w-full md:w-1/4">
+<div class="bg-[#1a2633] p-6 rounded-xl">
+<h3 class="text-xl font-bold mb-6">Filters</h3>
+<div class="space-y-6">
+<div>
+<h4 class="font-bold mb-3">Brand</h4>
+<div class="space-y-2">
+<label class="flex items-center">
+<input class="form-checkbox bg-transparent border-[#92adc9] rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="ml-2 text-sm">Nike</span>
+</label>
+<label class="flex items-center">
+<input class="form-checkbox bg-transparent border-[#92adc9] rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="ml-2 text-sm">Adidas</span>
+</label>
+<label class="flex items-center">
+<input class="form-checkbox bg-transparent border-[#92adc9] rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="ml-2 text-sm">Puma</span>
+</label>
+<label class="flex items-center">
+<input class="form-checkbox bg-transparent border-[#92adc9] rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="ml-2 text-sm">Reebok</span>
+</label>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-3">Size</h4>
+<div class="grid grid-cols-4 gap-2">
+<button class="border border-[#233648] rounded-md py-1 text-sm hover:border-primary hover:text-primary focus:border-primary focus:text-primary">7</button>
+<button class="border border-[#233648] rounded-md py-1 text-sm hover:border-primary hover:text-primary focus:border-primary focus:text-primary">8</button>
+<button class="border border-[#233648] rounded-md py-1 text-sm hover:border-primary hover:text-primary focus:border-primary focus:text-primary">9</button>
+<button class="border border-primary text-primary rounded-md py-1 text-sm">10</button>
+<button class="border border-[#233648] rounded-md py-1 text-sm hover:border-primary hover:text-primary focus:border-primary focus:text-primary">11</button>
+<button class="border border-[#233648] rounded-md py-1 text-sm hover:border-primary hover:text-primary focus:border-primary focus:text-primary">12</button>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-3">Color</h4>
+<div class="flex flex-wrap gap-3">
+<button class="w-6 h-6 rounded-full bg-black border-2 border-transparent focus:border-primary"></button>
+<button class="w-6 h-6 rounded-full bg-white border-2 border-primary"></button>
+<button class="w-6 h-6 rounded-full bg-red-500 border-2 border-transparent focus:border-primary"></button>
+<button class="w-6 h-6 rounded-full bg-blue-500 border-2 border-transparent focus:border-primary"></button>
+<button class="w-6 h-6 rounded-full bg-green-500 border-2 border-transparent focus:border-primary"></button>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-3">Price Range</h4>
+<input class="w-full h-2 bg-[#233648] rounded-lg appearance-none cursor-pointer accent-primary" max="500" min="50" type="range" value="250"/>
+<div class="flex justify-between text-sm text-[#92adc9] mt-2">
+<span>$50</span>
+<span>$500</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<div class="w-full md:w-3/4">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Sneakers</h1>
+<div class="flex items-center gap-3">
+<span class="text-sm text-[#92adc9]">Sort by:</span>
+<div class="relative">
+<select class="appearance-none bg-[#233648] border-none rounded-lg pl-4 pr-8 py-2 text-white text-sm focus:ring-primary">
+<option>Featured</option>
+<option>Newest</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-[#92adc9]">expand_more</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="group relative flex flex-col gap-3 pb-3 bg-[#1a2633] rounded-xl overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-1">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover" data-alt="Nike Air Max 270" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3tzywXDGxg3A_6a-Il72M3ECfErUTMMRSURbnsdkI84kKKcT2Fbwl7U_OVf0G01hSeJyZIn_Ms3cSgEA1x7NI7LE2KOM-DoCJinxuimX-h8jZf0wc827XnvnF96EV5yHVNE9-rAgEI4mrOoDyEis00VBglQFDmQ5czyz4RpqtJ6xeELOAY72mUyBypmntaSGX5-WmUr3OOrpEn7w1x8F_RkQ4Wc7q25M0MhRuFkTbr_ubEJAVsKmmHBXRaQGOxB54wXpxcTCv15xF");'></div>
+<div class="px-4">
+<p class="text-white text-base font-medium leading-normal">Nike Air Max 270</p>
+<p class="text-primary text-sm font-bold leading-normal">$150</p>
+</div>
+<button class="absolute bottom-4 right-4 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div class="group relative flex flex-col gap-3 pb-3 bg-[#1a2633] rounded-xl overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-1">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover" data-alt="Adidas Ultraboost 21" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4vQyEYwzhziHpqC4rAajJWR987f1xHxHK9UbE-nddPrYInvUdWMA9sOzZM_ElwruCdJ4bQam_zxCjmuVR1lh8ADFBgkySaUpEb7kgeHwxNsDL87lGMuNOwJ53RNdy-32hgej3CAJhDWDrO73KHtid3Gcygu05V5L4HuZsqYL9TkuKB8OPIAwIpUG8nWj7ipYScgVLL9pmL1DaoU5d7DvnyVFfmU52yy1M_rqIc5KL-Iw48az1zcVYUogZMuXMkOrvaRWpts9aAMQV");'></div>
+<div class="px-4">
+<p class="text-white text-base font-medium leading-normal">Adidas Ultraboost 21</p>
+<p class="text-primary text-sm font-bold leading-normal">$180</p>
+</div>
+<button class="absolute bottom-4 right-4 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div class="group relative flex flex-col gap-3 pb-3 bg-[#1a2633] rounded-xl overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-1">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover" data-alt="Puma Suede Classic" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4UrB6sMu2Cbjp_mw4Qqvct4S6oqm7oSdeqlb0ximzL_CEvzJVkIKtEC2p3vkkduz-bmoLExg5T6WNtZsEfagVTPz3BM89D_bbsYfyMgVrlm1ymXb4WchjD0c3Xp4KApgMit5Hew9jg9N-xU4aByoHAQBTU1R4OojDWDbhVh8QTcda1BvqOF7IyDiNyzpJODY_dyDUlKhjEiGjinYHbH9I5H5LH2hrhbCZh16yHtxNw9MTGSeOQMXykZP-6t2vINnLkoYwaEhTqDkt");'></div>
+<div class="px-4">
+<p class="text-white text-base font-medium leading-normal">Puma Suede Classic</p>
+<p class="text-primary text-sm font-bold leading-normal">$65</p>
+</div>
+<button class="absolute bottom-4 right-4 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div class="group relative flex flex-col gap-3 pb-3 bg-[#1a2633] rounded-xl overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-1">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover" data-alt="Reebok Classic Leather" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkAj9-fwgmH-hgA59dNIo8R5Mii-a3fsdc1fdWIaw3OhTMDfEzPr_ukbzV3LAW9qUb3oFcSD4BsRmVMBexWo8LHDzt-YHdaYxqSFpliNVhFhDBepOg_ln6wv8EgiK1k-V_gYcviAw2j745s9VLxC-FmTNuGODmVlFhS1H1wccm_34V5EvLnry7J6numwPG-c-5Vj_vIqbIcDGPgEr2v-Er_LalBvuuxFlnEf69uagAbjF1S5UrCwCksU9Co_W7eyCSkWmgXAsTFaZu");'></div>
+<div class="px-4">
+<p class="text-white text-base font-medium leading-normal">Reebok Classic Leather</p>
+<p class="text-primary text-sm font-bold leading-normal">$75</p>
+</div>
+<button class="absolute bottom-4 right-4 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div class="group relative flex flex-col gap-3 pb-3 bg-[#1a2633] rounded-xl overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-1">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover" data-alt="New Balance 574" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKTOhItvnn7hYtUdxgDU7trraYTvqa18qJ-wPYOnPcCe432ip84JqKuoqiYUONzxzNMdpdVEfzPsra-eCUXPliVr14OvQ47Cp-pYDpNpGKn7ZJPvH7rO5ynXzsAP-Xz_-PU0OxAt9hsDsNzi2Qy1vLvDTXZlZVxa5_dPYB8LpsMRltXwbXh2QA9NgTu_nRUCGuyP149AFdBTJyfFmdOqpYBRKH4X9N7flSEl62VspsBmQuXr4JlX9ajDCVDBT3_qVl0i25onae74zH");'></div>
+<div class="px-4">
+<p class="text-white text-base font-medium leading-normal">New Balance 574</p>
+<p class="text-primary text-sm font-bold leading-normal">$80</p>
+</div>
+<button class="absolute bottom-4 right-4 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div class="group relative flex flex-col gap-3 pb-3 bg-[#1a2633] rounded-xl overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-1">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover" data-alt="Converse Chuck Taylor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBLJcz2eq47VvStIHQuyRja5XDyJbaJdMf8Q4PPkaCkFrKx0dh7Y_NavN_DPg3y0p5wMuNj1zXbfYG8ZanbZUF34R6vLyyO2uAhklIilHTd67dMaNa3wpuRq7kqYmk7CWkF9ZmliPOytShajT9W0qvuuS_XOc25iRkKEdDYoRGHg8orMqra2-FgFstDCaljUGOPMIXrc0iGjueh14BPnRKus9XGMgS95qkTHa1hnclVeenjTnnjuASHdfgvmdsuYe99Ol3qaP0IAAMW");'></div>
+<div class="px-4">
+<p class="text-white text-base font-medium leading-normal">Converse Chuck Taylor</p>
+<p class="text-primary text-sm font-bold leading-normal">$55</p>
+</div>
+<button class="absolute bottom-4 right-4 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-center p-4 mt-8">
+<a class="flex size-10 items-center justify-center" href="#">
+<span class="material-symbols-outlined text-white text-lg">chevron_left</span>
+</a>
+<a class="text-sm font-bold leading-normal tracking-[0.015em] flex size-10 items-center justify-center text-white rounded-full bg-primary" href="#">1</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white rounded-full" href="#">2</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white rounded-full" href="#">3</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white rounded-full" href="#">4</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white rounded-full" href="#">5</a>
+<a class="flex size-10 items-center justify-center" href="#">
+<span class="material-symbols-outlined text-white text-lg">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-[#1a2633] mt-16">
+<div class="container mx-auto px-10 py-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div>
+<h4 class="font-bold text-lg mb-4">Shop</h4>
+<ul class="space-y-2">
+<li><a class="text-sm text-[#92adc9] hover:text-white" href="#">Men</a></li>
+<li><a class="text-sm text-[#92adc9] hover:text-white" href="#">Women</a></li>
+<li><a class="text-sm text-[#92adc9] hover:text-white" href="#">New Arrivals</a></li>
+<li><a class="text-sm text-[#92adc9] hover:text-white" href="#">Sale</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-4">Customer Service</h4>
+<ul class="space-y-2">
+<li><a class="text-sm text-[#92adc9] hover:text-white" href="#">Contact Us</a></li>
+<li><a class="text-sm text-[#92adc9] hover:text-white" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-sm text-[#92adc9] hover:text-white" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-4">Company</h4>
+<ul class="space-y-2">
+<li><a class="text-sm text-[#92adc9] hover:text-white" href="#">About Us</a></li>
+<li><a class="text-sm text-[#92adc9] hover:text-white" href="#">Careers</a></li>
+<li><a class="text-sm text-[#92adc9] hover:text-white" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-4">Follow Us</h4>
+<div class="flex space-x-4">
+<a class="text-[#92adc9] hover:text-white" href="#">
+<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-[#92adc9] hover:text-white" href="#">
+<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="text-[#92adc9] hover:text-white" href="#">
+<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.803 2.013 10.157 2 12.315 2zm-1.116 2.94a9.23 9.23 0 00-3.32.74A2.91 2.91 0 005.62 7.18c-.247.636-.416 1.363-.465 2.427-.048 1.024-.06 1.378-.06 3.808s.012 2.784.06 3.808c.049 1.064.218 1.791.465 2.427a2.91 2.91 0 001.523 1.523c.636.247 1.363.416 2.427.465 1.024.048 1.378.06 3.808.06s2.784-.013 3.808-.06c1.064-.049 1.791-.218 2.427-.465a2.91 2.91 0 001.523-1.523c.247-.636.416-1.363-.465-2.427.048-1.024.06-1.378.06-3.808s-.012-2.784-.06-3.808c-.049-1.064-.218-1.791-.465-2.427a2.91 2.91 0 00-1.523-1.523c-.636-.247-1.363-.416-2.427-.465-1.024-.048-1.378-.06-3.808-.06zm-1.015 1.954a4.996 4.996 0 100 9.992 4.996 4.996 0 000-9.992zM12 15a3 3 0 110-6 3 3 0 010 6z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-t-[#233648] mt-8 pt-6 text-center text-sm text-[#92adc9]">
+<p>© 2024 Sneakers. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>
