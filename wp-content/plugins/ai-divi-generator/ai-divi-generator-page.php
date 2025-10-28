@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Plugin Name: AI → Divi Page Generator (Google Gemini)
- * Description: Generate or modify Divi pages dynamically from natural-language brief using Google Gemini API (AJAX ready).
- * Version: 1.0.0
- */
-
 if (!defined('ABSPATH')) exit;
 
 class AIDiviGenerator
@@ -19,10 +13,12 @@ class AIDiviGenerator
         add_action('wp_ajax_ai_divi_generate', [$this, 'ajax_generate_page']);
     }
 
+
     public function register_settings()
     {
         register_setting('ai_divi_group', self::OPT_KEY);
     }
+
 
     public function menu()
     {
@@ -135,10 +131,20 @@ class AIDiviGenerator
             jQuery(document).ready(function($) {
                 $('#ai-divi-form').on('submit', function(e) {
                     e.preventDefault();
+
                     var formData = new FormData(this);
                     formData.append('action', 'ai_divi_generate');
 
-                    $('#ai-divi-response').html('Processing...');
+                    var $resp = $('#ai-divi-response');
+                    var done = false;
+
+                    $resp.html('<div class="notice notice-info"><p>Thinking...</p></div>');
+
+                    var thinkingTimer = setTimeout(function() {
+                        if (!done) {
+                            $resp.html('<div class="notice notice-info"><p>Generating...</p></div>');
+                        }
+                    }, 5000);
 
                     $.ajax({
                         url: ajaxurl,
@@ -147,18 +153,25 @@ class AIDiviGenerator
                         contentType: false,
                         processData: false,
                         success: function(response) {
+                            done = true;
+                            clearTimeout(thinkingTimer);
+
                             if (response.success) {
-                                $('#ai-divi-response').html('<div class="notice notice-success"><p>' + response.data.message + '</p></div>');
+                                $resp.html('<div class="notice notice-success"><p>' + response.data.message + '</p></div>');
                             } else {
-                                $('#ai-divi-response').html('<div class="notice notice-error"><p>' + response.data.message + '</p></div>');
+                                $resp.html('<div class="notice notice-error"><p>' + response.data.message + '</p></div>');
                             }
                         },
                         error: function(err) {
-                            $('#ai-divi-response').html('<div class="notice notice-error"><p>AJAX error. See console.</p></div>');
+                            done = true;
+                            clearTimeout(thinkingTimer);
+
+                            $resp.html('<div class="notice notice-error"><p>AJAX error. See console.</p></div>');
                             console.log(err);
                         }
                     });
                 });
+
             });
         </script>
 <?php
