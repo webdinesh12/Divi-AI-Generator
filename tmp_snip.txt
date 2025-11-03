@@ -1,0 +1,40 @@
+        foreach ($unique_templates as $t) {
+            if ($t['header_id']) {
+                $results[] = [
+                    'id'          => intval($t['header_id']),
+                    'title'       => 'Header – ' . $t['title'],
+                    'template_id' => intval($t['template_id']),
+                    'part'        => 'header',
+                ];
+            }
+
+            if ($t['footer_id']) {
+                $results[] = [
+                    'id'          => intval($t['footer_id']),
+                    'title'       => 'Footer – ' . $t['title'],
+                    'template_id' => intval($t['template_id']),
+                    'part'        => 'footer',
+                ];
+            }
+        }
+
+        return $results;
+    }
+
+    public function ai_divi_get_layout_content_by_id($layout_id)
+    {
+        $layout_post = get_post($layout_id);
+        return $layout_post->post_content ?? '--';
+        if ($layout_post && $layout_post->post_type === 'et_tb_layout') {
+            return $layout_post->post_content;
+        }
+        return '';
+    }
+
+    public function ai_divi_update_layout_by_id($layout_id, $new_content)
+    {
+        if (empty($layout_id) || empty($new_content)) return false;
+        $layout_post = get_post($layout_id);
+
+        // Accept Theme Builder library layouts as well
+        if (!$layout_post || !in_array($layout_post->post_type, ['et_header_layout', 'et_footer_layout', 'et_pb_layout'], true)) {

@@ -4,6 +4,7 @@
  * Plugin Name: AI → Divi Page Generator (Google Gemini)
  * Description: Generate or modify Divi pages dynamically from natural-language brief using Google Gemini API (AJAX ready).
  * Version: 1.0.1
+ * Author: Programmer
  */
 
 if (!defined('ABSPATH')) exit;
@@ -24,3 +25,17 @@ class AIDiviPluginBootstrap
 }
 
 new AIDiviPluginBootstrap();
+
+
+function dd(...$args)
+{
+    echo '<pre>';
+    foreach ($args as $arg) {
+        print_r($arg);
+    }
+}
+function ddx(...$args)
+{
+    dd($args);
+    exit;
+}
