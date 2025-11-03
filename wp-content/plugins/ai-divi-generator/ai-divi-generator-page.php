@@ -116,7 +116,6 @@ class AIDiviGenerator
                             <?php
                             $layouts = $this->ai_divi_get_all_theme_builder_layouts();
                             echo '<select name="ai_divi_layout_id" id="ai_divi_layout" class="regular-text">';
-                            echo '<option value="header">Create new header</option><option value="footer">Create new footer</option>';
                             foreach ($layouts as $layout) {
                                 echo '<option value="' . esc_attr($layout['id']) . '">'
                                     . esc_html($layout['title']) . ' (ID: ' . intval($layout['id']) . ')'
@@ -241,8 +240,10 @@ class AIDiviGenerator
                 }
             }
         } else if ($type == 'layout_creation_by_design') {
-            if ($ai_divi_layout_id && $ai_divi_layout_id != 'header' && $ai_divi_layout_id != 'footer') {
+            if ($ai_divi_layout_id) {
                 $existingCode  = $this->ai_divi_get_layout_content_by_id($ai_divi_layout_id);
+            } else {
+                wp_send_json_error(['message' => 'Please select a layout.']);
             }
         } else {
             wp_send_json_error(['message' => 'Please select a type.']);
@@ -271,20 +272,21 @@ class AIDiviGenerator
         $resp = wp_remote_post($endpoint, [
             'headers' => ['Content-Type' => 'application/json', 'x-goog-api-key' => $api_key],
             'body' => wp_json_encode($payload),
-            'timeout' => 600
+            'timeout' => 6000
         ]);
 
         if (is_wp_error($resp)) {
+            error_log('THE ERROR OCCUR AFTER GEMINI CALL');
+            error_log($resp->get_error_message());
             wp_send_json_error(['message' => $resp->get_error_message()]);
         }
 
         $body = json_decode(wp_remote_retrieve_body($resp), true);
         $raw = trim($body['candidates'][0]['content']['parts'][0]['text'] ?? '');
-        $raw = preg_replace('/^```(?:json)?|```$/m', '', $raw);
-        $raw = trim($raw);
-        $json = json_decode($raw, true);
+        $json = ai_clean_json($raw);
 
         if (!$json || empty($json['layout'])) {
+            ddx($raw);
             wp_send_json_error(['message' => 'AI output not valid JSON. Output: ' . $raw]);
         }
 
@@ -313,7 +315,7 @@ class AIDiviGenerator
                         'post_title'   => $page_title,
                         'post_name'    => $page_slug,
                         'post_content' => $layout,
-                        'post_status'  => 'draft'
+                        'post_status'  => $existing_page->post_status ?? 'draft'
                     ], true);
                 } else {
                     $post_id = wp_insert_post([
@@ -334,13 +336,7 @@ class AIDiviGenerator
             $edit_link = admin_url('post.php?action=edit&post=' . (int)$post_id);
             wp_send_json_success(['message' => 'Page saved successfully. <a href="' . $edit_link . '">Open in Divi Builder</a>']);
         } else if ($type == 'layout_creation_by_design') {
-            if ($ai_divi_layout_id == 'header' || $ai_divi_layout_id == 'footer') {
-                $this->ai_divi_create_new_layout($layout, 'et_' . ($ai_divi_layout_id ?? 'header') . '_layout');
-            } else if (empty($ai_divi_layout_id)) {
-                $this->ai_divi_create_new_layout($layout, 'et_header_layout');
-            } else {
-                $this->ai_divi_update_layout_by_id($ai_divi_layout_id, $layout);
-            }
+            $this->ai_divi_update_layout_by_id($ai_divi_layout_id, $layout);
             wp_send_json_success(['message' => 'Layout saved successfully.']);
         } else {
             wp_send_json_error(['message' => 'Please select a type.']);
@@ -369,8 +365,7 @@ class AIDiviGenerator
         foreach ($templates as $template) {
             $template_title = trim($template->post_title);
 
-            // Keep all templates, including the global "All Templates"; skip empty titles only
-            if (empty($template_title)) {
+            if (empty($template_title) || strtolower($template_title) === 'all templates') {
                 continue;
             }
 
@@ -422,10 +417,6 @@ class AIDiviGenerator
     {
         $layout_post = get_post($layout_id);
         return $layout_post->post_content ?? '--';
-        if ($layout_post && $layout_post->post_type === 'et_tb_layout') {
-            return $layout_post->post_content;
-        }
-        return '';
     }
 
     public function ai_divi_update_layout_by_id($layout_id, $new_content)
@@ -433,8 +424,7 @@ class AIDiviGenerator
         if (empty($layout_id) || empty($new_content)) return false;
         $layout_post = get_post($layout_id);
 
-        // Accept Theme Builder library layouts as well
-        if (!$layout_post || !in_array($layout_post->post_type, ['et_header_layout', 'et_footer_layout', 'et_pb_layout'], true)) {
+        if (!$layout_post || ($layout_post->post_type !== 'et_header_layout' && $layout_post->post_type !== 'et_footer_layout')) {
             return false;
         }
 
@@ -462,69 +452,21 @@ class AIDiviGenerator
             return false;
         }
 
-        // Determine part type from requested layout type
-        $part = ($layout_type === 'et_footer_layout') ? 'footer' : 'header';
-
-        // Create a Theme Builder layout as a Divi Library item
-        // Divi Theme Builder stores parts as `et_pb_layout` posts and links
-        // them to `et_template` via meta like `_et_header_layout_id` / `_et_footer_layout_id`.
+        // Create new layout
         $new_layout_id = wp_insert_post([
-            'post_title'   => 'AI Generated ' . ucfirst($part) . ' ' . wp_date('Y-m-d H:i:s'),
+            'post_title'   => 'AI Generated Layout ' . wp_date('Y-m-d H:i:s'),
             'post_content' => wp_kses_post($layout_content),
             'post_status'  => 'publish',
-            'post_type'    => 'et_pb_layout',
+            'post_type'    => $layout_type, // 'et_header_layout' or 'et_footer_layout'
         ]);
 
         if (is_wp_error($new_layout_id)) {
             return false;
         }
 
-        // Hint Divi about the part type for this layout (best effort)
-        // Not strictly required for visibility once linked to a template.
-        update_post_meta($new_layout_id, '_et_pb_post_type', 'et_' . $part . '_layout');
-        update_post_meta($new_layout_id, '_et_pb_use_builder', 'on');
-
-        // Try to attach this layout to the global Theme Builder template ("All Templates")
-        $template_id = 0;
-        $templates = get_posts([
-            'post_type'      => 'et_template',
-            'post_status'    => 'publish',
-            'posts_per_page' => -1,
-            'orderby'        => 'date',
-            'order'          => 'ASC',
-        ]);
-        if ($templates) {
-            // Prefer a template that looks global by title hint, otherwise first available
-            foreach ($templates as $t) {
-                $title = isset($t->post_title) ? trim($t->post_title) : '';
-                if ($title && (
-                    stripos($title, 'All Templates') !== false ||
-                    stripos($title, 'Default Website Template') !== false
-                )) {
-                    $template_id = (int) $t->ID;
-                    break;
-                }
-            }
-            if (!$template_id) {
-                $template_id = (int) $templates[0]->ID;
-            }
-        }
-
-        // Link the new layout to the template so it appears in Theme Builder
-        if ($template_id) {
-            if ($part === 'header') {
-                update_post_meta($template_id, '_et_header_layout_id', (int) $new_layout_id);
-            } else {
-                update_post_meta($template_id, '_et_footer_layout_id', (int) $new_layout_id);
-            }
-        }
-
         // Clear Divi cache
         if (function_exists('et_pb_clear_global_css_cache')) {
             et_pb_clear_global_css_cache();
-        }
-        if (function_exists('et_core_clear_cache')) {
-            et_core_clear_cache();
         }
 
         return $new_layout_id;
@@ -532,5 +474,3 @@ class AIDiviGenerator
 }
 
 new AIDiviGenerator();
-
-

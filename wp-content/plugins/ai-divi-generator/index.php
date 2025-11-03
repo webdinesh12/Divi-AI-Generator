@@ -39,3 +39,13 @@ function ddx(...$args)
     dd($args);
     exit;
 }
+
+function ai_clean_json($text)
+{
+    $text = preg_replace('/[\x00-\x1F\x7F\xA0\xAD\x{200B}-\x{200F}\x{FEFF}]/u', '', $text);
+    $text = preg_replace('/^```json\s*/i', '', $text);
+    $text = preg_replace('/^```\s*/', '', $text);
+    $text = preg_replace('/\s*```$/', '', $text);
+    $text = str_replace('```', '', $text);
+    return json_decode(trim($text), true);
+}
